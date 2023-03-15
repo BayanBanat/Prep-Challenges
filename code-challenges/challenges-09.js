@@ -22,7 +22,7 @@ const arrInc = (arr) => {
     let result = [];
     // write your code here
     arr.forEach(element => {
-        result.push(element+10)
+        result.push(element + 10)
     });
     return result;
 }
@@ -43,8 +43,8 @@ const arrInc = (arr) => {
 const roundDecimals = (arr) => {
     let roundDic;
     // write your code here
-    arr.forEach(number =>{
-       roundDic= arr.map(Math.round);
+    arr.forEach(number => {
+        roundDic = arr.map(Math.round);
 
     })
     return roundDic;
@@ -117,36 +117,38 @@ const roundDecimals = (arr) => {
 
 const employeesBonus = (arr) => {
     // write your code here
-    
-       
-    for(let i=0;i<arr.length;i++){
-        arr.forEach(element => {
-            let num = parseInt(arr.salary, 10);
-            if(arr[i].workHours>8) {
-                arr[i].salary+=100;
-            }else{
-                arr[i].salary+=50;
-            }
-        })
-       }
-       return arr;
+
+
+    for (let i = 0; i < arr.length; i++) {
+        const fifty = 50;
+        const handred = 100;
+
+        if (arr[i].workHours > 8) {
+            arr[i].salary = `${parseInt(arr[i].salary) + handred}$`;
+        } else {
+            arr[i].salary = `${parseInt(arr[i].salary) + fifty}$`;
+        }
+
     }
+    return arr;
+}
+
 
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
 // Challenge 04:
 // Optional:
-//
+
 // Harry wants to buy a new mouse and keyboard for his new setup
 // He wants to choose one mouse and one keyboard from the list of prices and take the most expensive combination
 // but his budget is limited, help him by finding the most expensive *price* for a combination to buy with his budget
-// 
+
 // Input:
 // budget = 200$
 // mouseArray = [35, 15, 75, 180, 150, 50]
 // keyBoardArray = [5, 150, 35, 120, 75, 50, 100]
-// 
+
 // Output: 200
 
 const mostExpensive = (budget, mouseArray, keyBoardArray) => {
@@ -160,17 +162,17 @@ const mostExpensive = (budget, mouseArray, keyBoardArray) => {
 
 
     let maxPrice = 0;
-    for (const mousePrice in mouseArray){
-        for (const keyboardPrice in keyBoardArray){
-           let totalPrice = mousePrice + keyboardPrice;
-            if (totalPrice <= budget){
+    for (const mousePrice in mouseArray) {
+        for (const keyboardPrice in keyBoardArray) {
+            let totalPrice = mousePrice + keyboardPrice;
+            if (totalPrice>maxPrice && totalPrice <= budget) {
                 maxPrice = totalPrice;
             }
         }
     }
     return maxPrice
 }
-    // write your code here
+// write your code here
 
 // -------------------------------------------------------------------------------------------------------
 
