@@ -137,17 +137,27 @@ const arrToStr = (arr) => {
 
 const letterCounter = (str) => {
     // write your code here
-    let result = '';
-  let count = 1;
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === str[i+1]) {
-      count++;
-    } else {
-      result += str[i]+count;
-      count = 1;
+    let lastResult = '';
+    let strSplit = str.split(' ');
+  
+    for (let i = 0; i < strSplit.length; i++) {
+      let firstResult = '';
+      let count = 1;
+  
+      for (let j = 0; j < strSplit[i].length; j++) {
+        if (strSplit[i][j] === strSplit[i][j+1]) {
+          count++;
+        } else {
+          firstResult += strSplit[i][j] + count;
+          count = 1;
+        }
+      }
+  
+      lastResult+= firstResult + ' ';
     }
-  }
-  return result
+  
+    return lastResult.trim();
+
 }  
 
 // -------------------------------------------------------------------------------------------------------
