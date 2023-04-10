@@ -16,6 +16,16 @@
 
 const wordLength = (str) => {
     // write your code here
+    let words = str.split(' ');
+  let numWords = words.length;
+  let middleWord=0;
+  if (numWords % 2 === 1) {
+    middleWord = (words[Math.floor(numWords / 2)].length);
+  } 
+  else {
+    middleWord = (words[((numWords / 2))]).length;
+  }
+  return middleWord;
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -41,6 +51,27 @@ const wordLength = (str) => {
 
 const wordLetters = (str1, str2) => {
     // write your code here
+
+    let sum1=0;
+    let sum2=0;
+    for (let i=0;i<str1.length;i++){
+        let string1=str1.charCodeAt(i);
+        sum1 +=string1;
+    }
+    for (let i=0;i<str2.length;i++){
+        let string2=str2.charCodeAt(i);
+        sum2+=string2;
+    }
+    return sum1 === sum2;
+
+    ///// or:
+    // if (str1.length !== str2.length) {
+    //     return false;
+    //   }
+    //   s1 = s1.split('').sort().join('');
+    //   s2 = s2.split('').sort().join('');
+    //   return s1 === s2;
+
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -65,6 +96,22 @@ const wordLetters = (str1, str2) => {
 
 const targetIndex = (arr, int) => {
     // write your code here
+    let num=0;
+    for(let i=0;i<arr.length;i++){
+        if(arr[i] === int){
+            
+             num= i;
+             break;
+        }
+        else if(arr[i]>int){
+            num= i;
+            break;
+        }
+        else{
+          num=arr.length;
+        }
+    }
+      return num;
 }
 // -------------------------------------------------------------------------------------------------------
 
